@@ -478,6 +478,11 @@ class Building {
                     gameState.resources.energy -= energyUsage;
                 }
             }
+                  else if (this.type === BUILDING_TYPES.iron_plate) {
+                if (gameState.resources.iron >= 2 && gameState.resources.iron_plate >= 1) {
+                    gameState.resources.energy -= energyUsage;
+                }
+            }
             else if (this.type === BUILDING_TYPES.BATTERY_FACTORY) {
                 if (gameState.resources.iron_plate >= 1 && gameState.resources.copper_plate >= 1 && gameState.resources.chemical >= 1) {
                     gameState.resources.iron_plate -= 1;
