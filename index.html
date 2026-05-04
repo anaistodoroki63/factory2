@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satis2D</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div>
+        <h1>Satis2D</h1>
+        <p>Construis des mines, usines et centrales. Clique sur un bouton puis sur la grille.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="sidebar">
+        <div id="mainButtons" class="button-group">
+          <button id="buildMiner">Mines</button>
+          <button id="buildSmelter">Fonderies</button>
+          <button id="buildFactory">Usines</button>
+          <button id="buildPipe">Tuyaux</button>
+          <button id="buildGenerator">Centrales</button>
+        </div>
+
+        <div id="typeButtons" class="button-group" style="display:none;"></div>
+
+        <div class="button-group control-row">
+          <button id="delete">Supprimer</button>
+          <button id="speed">⏸️ Pause</button>
+        </div>
+
+        <div class="status-panel">
+          <div><strong>Énergie:</strong> <span id="energy">0</span></div>
+          <div><strong>Cuivre:</strong> <span id="copper">0</span></div>
+          <div><strong>Fer:</strong> <span id="iron">0</span></div>
+          <div><strong>Circuits:</strong> <span id="circuits">0</span></div>
+          <div id="info" class="info">Sélectionnez un bâtiment et tapez sur la grille.</div>
+          <div id="stats" class="stats">🏭 0 bâtiments | ⚡ 0 généré / 0 utilisé</div>
+        </div>
+      </section>
+
+      <section class="canvas-panel">
+        <canvas id="gameCanvas"></canvas>
+      </section>
+    </main>
+
+    <footer>
+      Déploie ce dossier sur GitHub Pages, Netlify ou Vercel pour partager le jeu sans téléchargement.
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
