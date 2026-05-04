@@ -43,6 +43,7 @@ const BUILDING_TYPES = {
     BATTERY_FACTORY: 'battery_factory',
     SOLAR_PANEL_FACTORY: 'solar_panel_factory',
     ADVANCED_CIRCUIT_FACTORY: 'advanced_circuit_factory',
+    IRON_PLATE: 'iron_plate',
     
     // GENERATORS
     COAL_GENERATOR: 'coal_generator',
