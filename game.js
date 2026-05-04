@@ -301,7 +301,7 @@ const BUILDING_CONFIG = {
 let gameState = {
     buildings: [],
     resources: {
-        energy: 0,
+        energy: 100,
         coal_ore: 0,
         copper_ore: 0,
         iron_ore: 0,
