@@ -33,6 +33,17 @@ const BUILDING_CONFIG = {
     [BUILDING_TYPES.COPPER_MINER]: { name: 'Mine Cuivre', emoji: '⛏️', color: '#b84', productionTime: 40, energyUsage: 30, output: 'copper_ore' },
     [BUILDING_TYPES.URANIUM_MINER]: { name: 'Mine Uranium', emoji: '⛏️', color: '#4f4', productionTime: 100, energyUsage: 50, output: 'uranium_ore' },
     [BUILDING_TYPES.OIL_PUMP]: { name: 'Pompe Pétrole', emoji: '🛢️', color: '#441', productionTime: 60, energyUsage: 40, output: 'crude_oil' },
+    // 1. L'extraction
+[BUILDING_TYPES.URANIUM_MINER]: {
+    name: "Mine d'Uranium",
+    emoji: '⛏️',
+    color: '#2d5a27',
+    productionTime: 150, 
+    energyUsage: 50,
+    output: 'uranium_ore'
+},
+
+},
 
     // Fonderies
     [BUILDING_TYPES.IRON_SMELTER]: { name: 'Fonderie Fer', emoji: '🔥', color: '#c88', productionTime: 80, energyUsage: 15, input: { iron_ore: 2 }, output: { iron_plate: 1 } },
@@ -41,10 +52,12 @@ const BUILDING_CONFIG = {
 
     // Usines
     [BUILDING_TYPES.CIRCUIT_FACTORY]: { name: 'Usine Circuits', emoji: '🔌', color: '#48f', productionTime: 120, energyUsage: 30, input: { copper_plate: 1, iron_plate: 1 }, output: { circuit: 1 } },
+    [BUILDING_TYPES.URANIUM_ENRICHER]: { name: "Enrichisseur d'Uranium", emoji: '🌀', color: '#4f4', productionTime: 200, energyUsage: 100, input: { uranium_ore:: 1 }, output: { fuel_rod: 1 } },
 
     // Générateurs
     [BUILDING_TYPES.COAL_GENERATOR]: { name: 'Générateur Charbon', emoji: '⚡', color: '#444', energyProvided: 100, input: { coal_ore: 1 }, productionTime: 100 },
     [BUILDING_TYPES.SOLAR_GENERATOR]: { name: 'Panneau Solaire', emoji: '☀️', color: '#ff8', energyProvided: 40 },
+    [BUILDING_TYPES.NUCLEAR_GENERATOR]: { name: 'Centrale Nucléaire',  emoji: '☢️',  color: '#4f4',  energyProvided: 500,   input: { uranium_ore: 1 }, // Consomme 1 uranium pour produire l'énergieproductionTime: 200 
 };
 
 // --- ÉTAT DU JEU ---
@@ -53,8 +66,8 @@ let gameState = {
     resources: {
         energy: 100, coal_ore: 0, copper_ore: 0, iron_ore: 0, uranium_ore: 0, crude_oil: 0,
         iron_plate: 0, copper_plate: 0, plastic: 0, circuit: 0, advanced_circuit: 0, 
-        battery: 0, silicon: 0, solar_panel: 0
-    },
+        battery: 0, silicon: 0, solar_panel: 0, uranium_ore: 0, uranium_isore: 0, fuel_rod: 0,
+},
     selectedBuildingType: null,
     deleteMode: false,
     paused: false,
