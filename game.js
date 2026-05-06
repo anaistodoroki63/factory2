@@ -63,7 +63,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#333',
         productionTime: 2,
-        energyUsage: 5,
+        energyUsage: 30,
         output: 'coal_ore'
     },
     [BUILDING_TYPES.COPPER_MINER]: {
@@ -71,7 +71,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#b84',
         productionTime: 2,
-        energyUsage: 5,
+        energyUsage: 30,
         output: 'copper_ore'
     },
     [BUILDING_TYPES.IRON_MINER]: {
@@ -79,7 +79,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#a88',
         productionTime: 2,
-        energyUsage: 5,
+        energyUsage: 30,
         output: 'iron_ore'
     },
     [BUILDING_TYPES.GOLD_MINER]: {
@@ -87,7 +87,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#fd7',
         productionTime: 3,
-        energyUsage: 8,
+        energyUsage: 30,
         output: 'gold_ore'
     },
     [BUILDING_TYPES.SILVER_MINER]: {
@@ -95,7 +95,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#ddd',
         productionTime: 3,
-        energyUsage: 8,
+        energyUsage: 30,
         output: 'silver_ore'
     },
     [BUILDING_TYPES.ZINC_MINER]: {
@@ -103,7 +103,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#9af',
         productionTime: 2,
-        energyUsage: 6,
+        energyUsage: 30,
         output: 'zinc_ore'
     },
     [BUILDING_TYPES.BAUXITE_MINER]: {
@@ -111,7 +111,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#f9a',
         productionTime: 3,
-        energyUsage: 7,
+        energyUsage: 30,
         output: 'bauxite_ore'
     },
     [BUILDING_TYPES.NICKEL_MINER]: {
@@ -119,7 +119,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#d8d',
         productionTime: 3,
-        energyUsage: 7,
+        energyUsage: 30,
         output: 'nickel_ore'
     },
     [BUILDING_TYPES.COBALT_MINER]: {
@@ -127,7 +127,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#55d',
         productionTime: 3,
-        energyUsage: 8,
+        energyUsage: 30,
         output: 'cobalt_ore'
     },
     [BUILDING_TYPES.LITHIUM_MINER]: {
@@ -135,7 +135,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#8f8',
         productionTime: 4,
-        energyUsage: 10,
+        energyUsage: 30,
         output: 'lithium_ore'
     },
     [BUILDING_TYPES.URANIUM_MINER]: {
@@ -143,7 +143,7 @@ const BUILDING_CONFIG = {
         emoji: '⛏️',
         color: '#4f4',
         productionTime: 5,
-        energyUsage: 12,
+        energyUsage: 30,
         output: 'uranium_ore'
     },
     [BUILDING_TYPES.OIL_PUMP]: {
@@ -151,7 +151,7 @@ const BUILDING_CONFIG = {
         emoji: '🛢️',
         color: '#441',
         productionTime: 2,
-        energyUsage: 6,
+        energyUsage: 30,
         output: 'crude_oil'
     },
     
@@ -163,7 +163,7 @@ const BUILDING_CONFIG = {
         productionTime: 4,
         energyUsage: 10,
         input: 'copper_ore',
-        output: 'copper_plate'
+        output: 'copper_ingots'
     },
     [BUILDING_TYPES.IRON_SMELTER]: {
         name: 'Fonderie de Fer',
@@ -172,7 +172,7 @@ const BUILDING_CONFIG = {
         productionTime: 4,
         energyUsage: 10,
         input: 'iron_ore',
-        output: 'iron_plate'
+        output: 'iron_ingots'
     },
     [BUILDING_TYPES.GOLD_SMELTER]: {
         name: 'Fonderie d\'Or',
@@ -181,7 +181,7 @@ const BUILDING_CONFIG = {
         productionTime: 5,
         energyUsage: 12,
         input: 'gold_ore',
-        output: 'gold_plate'
+        output: 'gold_ingots'
     },
     [BUILDING_TYPES.SILVER_SMELTER]: {
         name: 'Fonderie d\'Argent',
@@ -190,7 +190,7 @@ const BUILDING_CONFIG = {
         productionTime: 5,
         energyUsage: 12,
         input: 'silver_ore',
-        output: 'silver_plate'
+        output: 'silver_ingots'
     },
     [BUILDING_TYPES.ALUMINUM_SMELTER]: {
         name: 'Fonderie d\'Aluminium',
@@ -199,7 +199,7 @@ const BUILDING_CONFIG = {
         productionTime: 6,
         energyUsage: 15,
         input: 'bauxite_ore',
-        output: 'aluminum_plate'
+        output: 'aluminum_ingots'
     },
     [BUILDING_TYPES.OIL_REFINERY]: {
         name: 'Raffinerie',
@@ -302,11 +302,13 @@ const BUILDING_CONFIG = {
 let gameState = {
     buildings: [],
     resources: {
-        energy: 100,
+        energy: 10,
         coal_ore: 0,
         copper_ore: 0,
         iron_ore: 0,
+        iron_ingots: 0,
         gold_ore: 0,
+        gold_ingots: 0,
         silver_ore: 0,
         zinc_ore: 0,
         bauxite_ore: 0,
@@ -315,6 +317,8 @@ let gameState = {
         lithium_ore: 0,
         uranium_ore: 0,
         crude_oil: 0,
+        copper_plate: 0,
+        copper_ingots: 0,
         copper_plate: 0,
         iron_plate: 0,
         gold_plate: 0,
